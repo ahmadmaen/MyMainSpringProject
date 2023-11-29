@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Login Form</title>
+
+    <!-- reference css file  -->
+    <link rel="stylesheet" th:href="@{/css/loginStyle.css}" >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="login-form">
+
+        <h2>Login</h2>
+
+        <form
+                action="#"
+                th:action="@{/authenticateTheUser}"
+                    method="post" >
+
+            <div th:if="${param.error}">
+                <i>Sorry! You entered invalid username/password.</i>
+            </div>
+
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <br>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
